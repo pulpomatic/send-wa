@@ -8,11 +8,11 @@ def get_db_pl_core_connection():
     try:
         # Establecer la conexión
         connection = psycopg2.connect(
-            host= os.getenv('DB_HOST'),         # Host donde está la base de datos
-            database=os.getenv('DB_NAME'),     # Nombre de la base de datos
-            user=os.getenv('DB_USER'),           # Usuario de la base de datos
-            password=os.getenv('DB_PASSWORD'),    # Contraseña del usuario
-            port=os.getenv('DB_PORT')               # Puerto de la base de datos (opcional)
+            host= os.getenv('DB_HOST'),        
+            database=os.getenv('DB_NAME'),    
+            user=os.getenv('DB_USER'),          
+            password=os.getenv('DB_PASSWORD'),    
+            port=os.getenv('DB_PORT')               
         )
         return connection
     except Exception as e:
