@@ -23,11 +23,11 @@ def get_db_pulpopay_connection():
     try:
         # Establecer la conexión
         connection = psycopg2.connect(
-            host=os.getenv('PP_DB_HOST'),         # Host donde está la base de datos
-            database=os.getenv('PP_DB_NAME'),     # Nombre de la base de datos
-            user=os.getenv('PP_DB_USER'),           # Usuario de la base de datos
-            password=os.getenv('PP_DB_PASSWORD'),    # Contraseña del usuario
-            port=os.getenv('PP_DB_PORT')               # Puerto de la base de datos (opcional)
+            host=os.getenv('PP_DB_HOST'),         
+            database=os.getenv('PP_DB_NAME'),    
+            user=os.getenv('PP_DB_USER'),          
+            password=os.getenv('PP_DB_PASSWORD'),    
+            port=os.getenv('PP_DB_PORT')               
         )
         return connection
     except Exception as e:
