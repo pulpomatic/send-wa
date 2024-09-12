@@ -27,7 +27,7 @@ WHERE
     pm.checkin_required = true 
     AND f.account_id IN ({account_ids}) 
     AND e.has_check_in = false
-    AND e."date" AT TIME ZONE 'America/Mexico_City' >= (NOW() AT TIME ZONE 'America/Mexico_City') - INTERVAL '24 hours';
+    AND e."date" AT TIME ZONE 'America/Mexico_City' >= (NOW() AT TIME ZONE 'America/Mexico_City') - INTERVAL '30 hours';
 """
 
 CONTENT_SID_REMINDER_CHECKING = "HX11caf525382cc6d7aecb74c10e5dc6d7"
