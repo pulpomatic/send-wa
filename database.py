@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 import psycopg2
 from psycopg2 import sql
 
@@ -6,11 +8,11 @@ def get_db_pl_core_connection():
     try:
         # Establecer la conexión
         connection = psycopg2.connect(
-            host="localhost",         # Host donde está la base de datos
-            database="master",     # Nombre de la base de datos
-            user="master",           # Usuario de la base de datos
-            password="Ku<=ngAZ*H|QA7-bj)WPz",    # Contraseña del usuario
-            port="5432"               # Puerto de la base de datos (opcional)
+            host= os.getenv('DB_HOST'),         # Host donde está la base de datos
+            database=os.getenv('DB_NAME'),     # Nombre de la base de datos
+            user=os.getenv('DB_USER'),           # Usuario de la base de datos
+            password=os.getenv('DB_PASSWORD'),    # Contraseña del usuario
+            port=os.getenv('DB_PORT')               # Puerto de la base de datos (opcional)
         )
         return connection
     except Exception as e:
@@ -21,11 +23,11 @@ def get_db_pulpopay_connection():
     try:
         # Establecer la conexión
         connection = psycopg2.connect(
-            host="localhost",         # Host donde está la base de datos
-            database="pl_bridge_db",     # Nombre de la base de datos
-            user="master",           # Usuario de la base de datos
-            password="Ku<=ngAZ*H|QA7-bj)WPz",    # Contraseña del usuario
-            port="5432"               # Puerto de la base de datos (opcional)
+            host=os.getenv('PP_DB_HOST'),         # Host donde está la base de datos
+            database=os.getenv('PP_DB_NAME'),     # Nombre de la base de datos
+            user=os.getenv('PP_DB_USER'),           # Usuario de la base de datos
+            password=os.getenv('PP_DB_PASSWORD'),    # Contraseña del usuario
+            port=os.getenv('PP_DB_PORT')               # Puerto de la base de datos (opcional)
         )
         return connection
     except Exception as e:
