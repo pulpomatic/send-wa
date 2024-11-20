@@ -68,10 +68,11 @@ def process_movement(movement: dict, enlace_formulario: str) -> None:
 
         # Enviar el mensaje al usuario
         content_variables = {
-            "1": user_name,
+            "1": str(user_name),
             "2": str(movement_total),
-            "3": str(movement_date),
-            "4": enlace_formulario
+            "3": str(movement.get('slug', 'No disponible')),
+            "4": str(movement_date),
+            "5": str(enlace_formulario)
         }
         content_variables_string=json.dumps(content_variables)
         print(content_variables_string)
